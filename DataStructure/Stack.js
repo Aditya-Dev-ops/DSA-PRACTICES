@@ -55,4 +55,37 @@ class Node{
   console.log(stack.pop());
   console.log(stack.pop());
   console.log(stack.pop());
-  console.log(stack)
+  console.log(stack);
+
+
+  //Stack Data-Structure with array
+
+  class StackDataStructureWithArray {
+    constructor(){
+        this.data=[];
+    }
+    peek(){
+        return this.data[this.data.length-1];
+      }
+    push(value){
+        this.data.push(value);
+        return this;
+      }
+    pop(){
+        if(this.data.length === 0){
+            return ("stack is empty");
+        }
+         let temp = this.data.pop();
+        return this;
+      }
+  };
+
+  const stackArray = new StackDataStructureWithArray();
+  console.log(stackArray.push("google"));
+  console.log(stackArray.push("chrome"));
+  console.log(stackArray.push("twitter"));
+  console.log(stackArray.pop());
+  console.log(stackArray.pop());
+  console.log(stackArray.pop());
+  console.log(stackArray.pop());
+  console.log(stackArray);
