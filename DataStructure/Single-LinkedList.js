@@ -147,4 +147,4 @@ class LinkedList {
   console.log(list.printlist());
   console.log(list.remove(2));
   console.log(list);
-  // console.log(list.remove());
+  console.log(list.remove());
