@@ -20,24 +20,24 @@ class Node{
      if(this.length === 0){
          this.first = new Node(value);
          this.last = this.first;
-         this.length++;
      } 
      else{
         let newnode = new Node(value);
         this.last.next = newnode;
         this.last = newnode;
-        this.length++;
-     }
+    }  
+    this.length++;
      return this;
   }
   dequeue(){
-     if(this.length === 0 ) return ("stack is empty");
+     if(!this.first) return ("stack is empty");
+     if(this.first === this.last) this.last = null;
       let removednode = this.first;
       this.first = this.first.next;
       this.length--;
       return removednode; 
-  }
-  }
+    }
+  };
   
   const queue = new Queues();
   
@@ -49,6 +49,7 @@ class Node{
   console.log(queue.dequeue());
   console.log(queue.dequeue());
   console.log(queue.dequeue());
+  
   
   
   
