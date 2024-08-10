@@ -79,13 +79,14 @@ class Node{
         return this;
       }
   };
-
+ 
   const stackArray = new StackDataStructureWithArray();
   console.log(stackArray.push("google"));
   console.log(stackArray.push("chrome"));
   console.log(stackArray.push("twitter"));
-  console.log(stackArray.pop());
+  console.log(stackArray.pop());   
   console.log(stackArray.pop());
   console.log(stackArray.pop());
   console.log(stackArray.pop());
   console.log(stackArray);
+  
