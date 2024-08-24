@@ -145,8 +145,69 @@ class BinaryTree {
          }
        }
        return list;
-    }
+    };
+    BreadthFirstSearchRecursion(queue , list){
+     if(queue.length <= 0){
+        return list;
+     };
+     let currentNode ;
+     while(queue.length > 0){
+      currentNode = queue.shift();
+      list.push(currentNode.value);
+      if(currentNode.left){
+        queue.push(currentNode.left);
+      }
+      if(currentNode.right){
+        queue.push(currentNode.right);
+      }
+     }
+     return list;
+    };
+    DFS_InOrder(){
+        return traverseInOrder(this.root ,[]);
+    };
+    DFS_ToOrder(){
+        return traverseToOrder(this.root ,[]);
+    };
+    DFS_PostOrder(){
+        return traversePostOrder(this.root ,[]);
+    };
 };
+
+
+//**Function that used in Bettertree Class 
+function traverseInOrder(node , list){
+    if(node.left){
+        traverseInOrder(node.left,list);
+    }
+    list.push(node.value);
+    if(node.right){
+        traverseInOrder(node.right,list);
+    }
+    return list;
+};
+
+function traverseToOrder(node , list){
+    list.push(node.value);
+    if(node.left){
+        traverseToOrder(node.left,list);
+    }
+    if(node.right){
+        traverseToOrder(node.right,list);
+    }
+    return list;
+}
+function traversePostOrder(node , list){
+    if(node.left){
+        traversePostOrder(node.left,list);
+    }
+    if(node.right){
+        traversePostOrder(node.right,list);
+    }
+    list.push(node.value);
+    return list;
+}
+
 
 // Example usage
 const Bettertree = new BinaryTree();
@@ -159,4 +220,6 @@ Bettertree.insert(4);
 Bettertree.insert(34);
 Bettertree.insert(35);
 console.log(Bettertree);
-console.log(Bettertree.breadthfirstSearch());
+console.log(Bettertree.DFS_InOrder());
+console.log(Bettertree.DFS_ToOrder());
+console.log(Bettertree.DFS_PostOrder());
