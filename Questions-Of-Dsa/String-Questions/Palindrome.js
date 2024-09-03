@@ -1,3 +1,6 @@
+
+// A phrase is a palindrome if, after converting all uppercase letters into lowercase letters and removing all non-alphanumeric characters, it reads the same forward and backward. Alphanumeric characters include letters and numbers.
+
 var isPalindrome = function(s) {
     s = s.toLowerCase();
     for(let i=0; i < Math.floor(s.length/2); i++){
